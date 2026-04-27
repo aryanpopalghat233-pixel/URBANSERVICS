@@ -99,3 +99,61 @@ workers.innerHTML=d.map(x=>`<li>${x.name}</li>`).join("");
 });
 }
 }
+/* SERVICE FULL DATA */
+const servicesData = [
+{name:"Home Cleaning",category:"Cleaning",price:999,img:"https://images.unsplash.com/photo-1581578731548-c64695cc6952",desc:"Complete home cleaning by professionals"},
+{name:"Leak Fix",category:"Plumbing",price:299,img:"https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8",desc:"Quick leak fixing service"},
+{name:"Fan Repair",category:"Electrician",price:249,img:"https://images.unsplash.com/photo-1593941707882-a5bac6861d75",desc:"Repair fans efficiently"},
+{name:"Facial",category:"Beauty",price:499,img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348",desc:"Professional facial service"},
+{name:"AC Service",category:"AC Repair",price:599,img:"https://images.unsplash.com/photo-1581093458791-9f3c3900dfad",desc:"AC maintenance & cleaning"}
+];
+
+/* RENDER HOME SERVICES */
+if(document.querySelector(".uc-grid")){
+document.querySelector(".uc-grid").innerHTML = servicesData.map(s=>`
+<div class="uc-card" onclick='openModal(${JSON.stringify(s)})'>
+<h3>${s.name}</h3>
+<p>${s.category}</p>
+</div>
+`).join("");
+}
+
+/* OPEN MODAL */
+function openModal(service){
+serviceModal.style.display="flex";
+
+modalName.innerText = service.name;
+modalDesc.innerText = service.desc;
+modalPrice.innerText = service.price;
+modalImg.src = service.img;
+
+localStorage.setItem("selectedService", service.name);
+}
+
+/* CLOSE */
+function closeModal(){
+serviceModal.style.display="none";
+}
+
+/* BOOKING */
+if(document.getElementById("quickBooking")){
+quickBooking.onsubmit = async (e)=>{
+e.preventDefault();
+
+await fetch(API+"/book-service",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({
+name:bname.value,
+phone:bphone.value,
+address:baddress.value,
+service:localStorage.getItem("selectedService"),
+subservice:"",
+datetime:new Date()
+})
+});
+
+alert("Booking Confirmed!");
+closeModal();
+};
+}
