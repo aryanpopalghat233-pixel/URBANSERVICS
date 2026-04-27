@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>URBANSERVICE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="uc-navbar">
+<div class="left"><div class="logo-box">UC</div><h2>UrbanService</h2></div>
+<div class="right">
+<a href="services.html">Services</a>
+<a href="booking.html">Book</a>
+<a href="tracking.html">Track</a>
+</div>
+</nav>
+
+<section class="uc-hero">
+<h1>Home services at your doorstep</h1>
+
+<div class="search-bar">
+<input id="searchInput" placeholder="Search services...">
+<div id="suggestions"></div>
+</div>
+
+<div class="uc-grid">
+<div class="uc-card" onclick="goService('Cleaning')">🧹 Cleaning</div>
+<div class="uc-card" onclick="goService('Plumbing')">🔧 Plumbing</div>
+<div class="uc-card" onclick="goService('Electrician')">💡 Electrician</div>
+<div class="uc-card" onclick="goService('Beauty')">💄 Beauty</div>
+<div class="uc-card" onclick="goService('AC Repair')">❄️ AC Repair</div>
+</div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
