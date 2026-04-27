@@ -30,6 +30,27 @@
 <div class="uc-card" onclick="goService('Beauty')">💄 Beauty</div>
 <div class="uc-card" onclick="goService('AC Repair')">❄️ AC Repair</div>
 </div>
+<!-- SERVICE MODAL -->
+<div id="serviceModal" class="modal">
+<div class="modal-content">
+
+<span class="close-btn" onclick="closeModal()">×</span>
+
+<img id="modalImg">
+
+<div class="modal-body">
+<h2 id="modalName"></h2>
+<p id="modalDesc"></p>
+
+<div class="price">₹<span id="modalPrice"></span></div>
+
+<form id="quickBooking" class="booking-form">
+<input id="bname" placeholder="Your Name" required>
+<input id="bphone" placeholder="Phone" required>
+<input id="baddress" placeholder="Address" required>
+<button class="btn">Book Now</button>
+</form>
+</div>  
 
 </section>
 
