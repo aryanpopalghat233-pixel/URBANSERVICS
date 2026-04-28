@@ -184,3 +184,14 @@ window.location.href = "booking.html";
 if(document.getElementById("service")){
 service.value = localStorage.getItem("selectedService") || "";
 }
+function showToast(msg){
+let t = document.createElement("div");
+t.className = "toast show";
+t.innerText = msg;
+document.body.appendChild(t);
+
+setTimeout(()=>{
+t.classList.remove("show");
+setTimeout(()=>t.remove(),300);
+},2000);
+}
