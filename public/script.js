@@ -157,3 +157,30 @@ alert("Booking Confirmed!");
 closeModal();
 };
 }
+/* OPEN SERVICE */
+function openService(name, category, price, img){
+localStorage.setItem("serviceName", name);
+localStorage.setItem("serviceCategory", category);
+localStorage.setItem("servicePrice", price);
+localStorage.setItem("serviceImg", img);
+window.location.href = "service-detail.html";
+}
+
+/* LOAD DETAIL PAGE */
+if(document.getElementById("detailName")){
+detailName.innerText = localStorage.getItem("serviceName");
+detailCategory.innerText = localStorage.getItem("serviceCategory");
+detailPrice.innerText = localStorage.getItem("servicePrice");
+detailImg.src = localStorage.getItem("serviceImg");
+}
+
+/* BOOK NOW */
+function bookNow(){
+localStorage.setItem("selectedService", localStorage.getItem("serviceName"));
+window.location.href = "booking.html";
+}
+
+/* AUTO FILL */
+if(document.getElementById("service")){
+service.value = localStorage.getItem("selectedService") || "";
+}
