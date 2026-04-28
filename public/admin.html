@@ -1,16 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Admin Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<input id="user" placeholder="admin">
-<input id="pass" placeholder="1234">
-<button onclick="login()">Login</button>
+<header class="header">
+<div class="container nav">
+<h2 class="logo">Admin Panel</h2>
+</div>
+</header>
 
+<main class="container">
+
+<h1>Dashboard</h1>
+
+<div class="grid stats">
+<div class="card"><h3 id="totalBookings">0</h3><p>Bookings</p></div>
+<div class="card"><h3 id="totalWorkers">0</h3><p>Workers</p></div>
+</div>
+
+<section>
+<h2>Bookings</h2>
 <ul id="bookings"></ul>
+</section>
+
+<section>
+<h2>Workers</h2>
 <ul id="workers"></ul>
+</section>
+
+</main>
 
 <script src="script.js"></script>
 </body>
