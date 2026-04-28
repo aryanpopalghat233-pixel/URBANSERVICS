@@ -63,7 +63,7 @@ await fetch(API+"/book-service",{method:"POST",headers:{"Content-Type":"applicat
 name:name.value,phone:phone.value,address:address.value,
 service:service.value,subservice:subservice.value,datetime:datetime.value
 })});
-alert("Booked");
+showToast("Booking Confirmed!");
 };
 }
 
