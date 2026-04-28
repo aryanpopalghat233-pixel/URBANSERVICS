@@ -195,3 +195,8 @@ t.classList.remove("show");
 setTimeout(()=>t.remove(),300);
 },2000);
 }
+window.onclick = function(e){
+if(e.target === serviceModal){
+closeModal();
+}
+}
