@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Join as Professional</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<form id="workerForm">
-<input id="wname" placeholder="Name">
-<input id="wphone" placeholder="Phone">
-<input id="skills" placeholder="Skills">
-<input id="experience" placeholder="Experience">
-<input id="lat" placeholder="Lat">
-<input id="lng" placeholder="Lng">
+<header class="header">
+<div class="container nav">
+<h2 class="logo">UrbanService</h2>
+<a href="index.html">Home</a>
+</div>
+</header>
 
-<button>Apply</button>
+<main class="container">
+
+<h1>Become a Service Professional</h1>
+
+<form id="workerForm" class="card form">
+<input id="wname" placeholder="Full Name" required>
+<input id="wphone" placeholder="Phone" required>
+<input id="skills" placeholder="Skills" required>
+<input id="experience" placeholder="Experience">
+<input id="lat" placeholder="Latitude">
+<input id="lng" placeholder="Longitude">
+<button class="btn">Apply Now</button>
 </form>
+
+</main>
+
+<footer class="footer">
+<p>Join our growing network</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
