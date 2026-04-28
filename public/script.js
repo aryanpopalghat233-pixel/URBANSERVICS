@@ -200,3 +200,95 @@ if(e.target === serviceModal){
 closeModal();
 }
 }
+/* SERVICES (REALISTIC) */
+const homeServices = [
+{
+name:"Home Cleaning",
+price:999,
+img:"https://images.unsplash.com/photo-1581578731548-c64695cc6952",
+desc:"Professional home cleaning service.",
+reviews:["Very clean work","Worth the price","Highly recommended"]
+},
+{
+name:"Bathroom Cleaning",
+price:499,
+img:"https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
+desc:"Deep bathroom cleaning.",
+reviews:["Sparkling clean","Good service"]
+},
+{
+name:"AC Repair",
+price:599,
+img:"https://images.unsplash.com/photo-1581093458791-9f3c3900dfad",
+desc:"AC service and repair.",
+reviews:["Quick fix","Cooling improved"]
+},
+{
+name:"Plumbing",
+price:299,
+img:"https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8",
+desc:"All plumbing services.",
+reviews:["Solved quickly","Professional"]
+},
+{
+name:"Electrician",
+price:249,
+img:"https://images.unsplash.com/photo-1581091215367-59ab6b6a3d72",
+desc:"Electrical repairs.",
+reviews:["Fast work","Good technician"]
+},
+{
+name:"Salon at Home",
+price:799,
+img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348",
+desc:"Beauty services at home.",
+reviews:["Loved it","Very relaxing"]
+},
+{
+name:"Appliance Repair",
+price:399,
+img:"https://images.unsplash.com/photo-1581093588401-22f3d6f0b1f6",
+desc:"Repair home appliances.",
+reviews:["Fixed quickly","Affordable"]
+}
+];
+
+/* LOAD SERVICES */
+if(document.getElementById("serviceGrid")){
+serviceGrid.innerHTML = homeServices.map((s,i)=>`
+<div class="card" onclick="openDetail(${i})">
+<img src="${s.img}" class="service-img">
+<h3>${s.name}</h3>
+<p>Starting ₹${s.price}</p>
+</div>
+`).join("");
+}
+
+/* OPEN DETAIL TAB */
+function openDetail(i){
+const s = homeServices[i];
+
+document.getElementById("serviceDetail").style.display="block";
+
+dImg.src = s.img;
+dName.innerText = s.name;
+dDesc.innerText = s.desc;
+dPrice.innerText = s.price;
+
+reviews.innerHTML = s.reviews.map(r=>`<li>⭐ ${r}</li>`).join("");
+
+localStorage.setItem("selectedService", s.name);
+
+/* scroll smooth */
+window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"});
+}
+
+/* CLOSE */
+function closeDetail(){
+document.getElementById("serviceDetail").style.display="none";
+}
+
+/* BOOK */
+function goToBooking(){
+window.location.href="booking.html";
+}
