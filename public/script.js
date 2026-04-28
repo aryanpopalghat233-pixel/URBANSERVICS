@@ -292,3 +292,7 @@ document.getElementById("serviceDetail").style.display="none";
 function goToBooking(){
 window.location.href="booking.html";
 }
+/* AUTO-FILL SERVICE IN BOOKING PAGE */
+if(document.getElementById("service")){
+  service.value = localStorage.getItem("selectedService") || "";
+}
