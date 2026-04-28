@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Book Service</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="uc-navbar">
+<div class="left">
+<div class="logo-box">UC</div>
+<h2>UrbanService</h2>
+</div>
+</nav>
+
+<div class="form-container">
+<h2>Book a Service</h2>
+
+<form id="bookingForm">
+
+<input id="name" placeholder="Full Name" required>
+<input id="phone" placeholder="Phone Number" required>
+<input id="address" placeholder="Address" required>
+
+<input id="service" placeholder="Service" readonly>
+
+<input id="subservice" placeholder="Sub-service (optional)">
+<input type="datetime-local" id="datetime">
+
+<button class="btn">Confirm Booking</button>
+
+</form>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
