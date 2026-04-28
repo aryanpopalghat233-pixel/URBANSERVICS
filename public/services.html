@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Services</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Services</h2>
+<header class="header">
+<div class="container nav">
+<h2 class="logo">UrbanService</h2>
+<a href="index.html">Home</a>
+</div>
+</header>
+
+<main class="container">
+
+<h1>All Services</h1>
 
 <div class="toolbar">
-<input id="searchService" placeholder="Search">
+<input id="searchService" placeholder="Search services">
 <select id="categoryFilter">
 <option value="">All</option>
 <option>Cleaning</option>
@@ -20,6 +30,12 @@
 </div>
 
 <div id="serviceList" class="grid"></div>
+
+</main>
+
+<footer class="footer">
+<p>Explore our wide range of services</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
