@@ -1,59 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>URBANSERVICE</title>
+<title>UrbanService</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav class="uc-navbar">
-<div class="left"><div class="logo-box">UC</div><h2>UrbanService</h2></div>
-<div class="right">
+<header class="header">
+<div class="container nav">
+<h2 class="logo">UrbanService</h2>
+<nav>
 <a href="services.html">Services</a>
-<a href="booking.html">Book</a>
 <a href="tracking.html">Track</a>
-<a href="worker.html">Become a Professional</a>  
-</div>
+<a href="worker.html">Become a Pro</a>
+<a href="admin.html">Admin</a>
 </nav>
-
-<section class="uc-hero">
-<h1>Home services at your doorstep</h1>
-
-<div class="search-bar">
-<input id="searchInput" placeholder="Search services...">
-<div id="suggestions"></div>
 </div>
+</header>
 
-<div class="uc-grid">
-<div class="uc-card" onclick="goService('Cleaning')">🧹 Cleaning</div>
-<div class="uc-card" onclick="goService('Plumbing')">🔧 Plumbing</div>
-<div class="uc-card" onclick="goService('Electrician')">💡 Electrician</div>
-<div class="uc-card" onclick="goService('Beauty')">💄 Beauty</div>
-<div class="uc-card" onclick="goService('AC Repair')">❄️ AC Repair</div>
-</div>
-<!-- SERVICE MODAL -->
-<div id="serviceModal" class="modal">
-<div class="modal-content">
+<main class="container">
 
-<span class="close-btn" onclick="closeModal()">×</span>
-
-<img id="modalImg">
-
-<div class="modal-body">
-<h2 id="modalName"></h2>
-<p id="modalDesc"></p>
-
-<div class="price">₹<span id="modalPrice"></span></div>
-
-<form id="quickBooking" class="booking-form">
-<input id="bname" placeholder="Your Name" required>
-<input id="bphone" placeholder="Phone" required>
-<input id="baddress" placeholder="Address" required>
-<button class="btn">Book Now</button>
-</form>
-</div>  
-
+<section class="hero">
+<h1>Reliable home services, on demand</h1>
+<p>Book trusted professionals for cleaning, repairs, and more.</p>
 </section>
+
+<section>
+<h2>Popular Services</h2>
+<div class="grid" id="serviceGrid"></div>
+</section>
+
+</main>
+
+<footer class="footer">
+<p>© 2026 UrbanService. All rights reserved.</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
