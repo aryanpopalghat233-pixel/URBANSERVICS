@@ -13,7 +13,6 @@
 <a href="services.html">Services</a>
 <a href="tracking.html">Track</a>
 <a href="worker.html">Become a Pro</a>
-<a href="admin.html">Admin</a>
 </nav>
 </div>
 </header>
@@ -21,19 +20,41 @@
 <main class="container">
 
 <section class="hero">
-<h1>Reliable home services, on demand</h1>
-<p>Book trusted professionals for cleaning, repairs, and more.</p>
+<h1>Home services, on demand</h1>
+<p>Select a service to get started</p>
 </section>
 
+<!-- SERVICES -->
 <section>
 <h2>Popular Services</h2>
 <div class="grid" id="serviceGrid"></div>
 </section>
 
+<!-- DETAIL TAB -->
+<section id="serviceDetail" class="detail-tab" style="display:none;">
+<button onclick="closeDetail()" class="back-btn">← Back</button>
+
+<div class="detail-card">
+<img id="dImg">
+
+<div class="detail-info">
+<h2 id="dName"></h2>
+<p id="dDesc"></p>
+
+<h3 class="price">₹<span id="dPrice"></span></h3>
+
+<h3>Customer Reviews</h3>
+<ul id="reviews"></ul>
+
+<button class="btn" onclick="goToBooking()">Book Now</button>
+</div>
+</div>
+</section>
+
 </main>
 
 <footer class="footer">
-<p>© 2026 UrbanService. All rights reserved.</p>
+<p>© UrbanService</p>
 </footer>
 
 <script src="script.js"></script>
