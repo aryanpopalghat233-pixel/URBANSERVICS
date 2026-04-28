@@ -1,24 +1,25 @@
-/* RESET */
+/* ---------- GLOBAL ---------- */
 * {
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 body {
-background:#f7f7f7;
-color:#222;
+background:#f6f7fb;
+color:#1f2937;
+line-height:1.5;
 }
 
-/* NAVBAR */
+/* ---------- NAVBAR ---------- */
 .uc-navbar {
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 40px;
-background:#fff;
-border-bottom:1px solid #eee;
+padding:16px 40px;
+background:#ffffff;
+border-bottom:1px solid #e5e7eb;
 position:sticky;
 top:0;
 z-index:100;
@@ -28,59 +29,89 @@ z-index:100;
 background:#111;
 color:#fff;
 padding:8px 12px;
-border-radius:6px;
-font-weight:bold;
+border-radius:8px;
+font-weight:700;
 }
 
-/* HERO */
+.uc-navbar a {
+margin-left:20px;
+text-decoration:none;
+color:#374151;
+font-weight:500;
+}
+
+.uc-navbar a:hover {
+color:#000;
+}
+
+/* ---------- HERO ---------- */
 .uc-hero {
 max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:50px 20px;
 }
 
 .uc-hero h1 {
-font-size:42px;
+font-size:44px;
+font-weight:700;
 margin-bottom:25px;
 }
 
-/* SEARCH */
+/* ---------- SEARCH ---------- */
 .search-bar {
-margin-bottom:20px;
+position:relative;
+margin-bottom:30px;
 }
 
 .search-bar input {
 width:100%;
-padding:14px;
-border-radius:10px;
+padding:14px 16px;
+border-radius:12px;
 border:1px solid #ddd;
 font-size:16px;
+transition:0.2s;
 }
 
-/* GRID */
+.search-bar input:focus {
+border-color:#00aaff;
+outline:none;
+box-shadow:0 0 0 3px rgba(0,170,255,0.1);
+}
+
+/* ---------- GRID ---------- */
 .uc-grid {
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:20px;
 }
 
-/* SERVICE CARD */
+/* ---------- SERVICE CARD ---------- */
 .uc-card {
-background:#fff;
-padding:20px;
-border-radius:14px;
-box-shadow:0 4px 12px rgba(0,0,0,0.08);
+background:#ffffff;
+padding:22px;
+border-radius:16px;
+box-shadow:0 6px 16px rgba(0,0,0,0.06);
 cursor:pointer;
-transition:0.3s;
+transition:0.25s;
 text-align:center;
 }
 
 .uc-card:hover {
 transform:translateY(-6px);
-box-shadow:0 8px 20px rgba(0,0,0,0.12);
+box-shadow:0 12px 28px rgba(0,0,0,0.12);
 }
 
-/* MODAL */
+.uc-card h3 {
+margin-bottom:6px;
+font-size:18px;
+}
+
+.uc-card p {
+color:#6b7280;
+font-size:14px;
+}
+
+/* ---------- MODAL ---------- */
 .modal {
 position:fixed;
 top:0;
@@ -97,77 +128,112 @@ z-index:200;
 .modal-content {
 background:#fff;
 width:90%;
-max-width:500px;
-border-radius:12px;
+max-width:520px;
+border-radius:16px;
 overflow:hidden;
-animation:fadeIn 0.3s ease;
+animation:fadeIn 0.25s ease;
 }
 
 .modal img {
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
 
 .modal-body {
-padding:20px;
+padding:22px;
 }
 
 .modal-body h2 {
+font-size:22px;
+margin-bottom:6px;
+}
+
+.modal-body p {
+color:#555;
 margin-bottom:10px;
 }
 
 .price {
-color:#00aaff;
 font-size:22px;
-font-weight:bold;
-margin:10px 0;
+font-weight:700;
+color:#00aaff;
+margin-bottom:15px;
 }
 
-/* BUTTON */
+/* ---------- FORM ---------- */
+.booking-form input {
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
+border:1px solid #ddd;
+}
+
+.booking-form input:focus {
+border-color:#00aaff;
+outline:none;
+}
+
+/* ---------- BUTTON ---------- */
 .btn {
 width:100%;
 padding:14px;
 border:none;
-border-radius:10px;
+border-radius:12px;
 background:#00aaff;
 color:white;
 font-size:16px;
+font-weight:600;
 cursor:pointer;
-transition:0.3s;
+transition:0.25s;
 }
 
 .btn:hover {
 background:#008ecc;
 }
 
-/* CLOSE */
+/* ---------- CLOSE BUTTON ---------- */
 .close-btn {
 position:absolute;
 top:15px;
 right:20px;
-font-size:22px;
+font-size:24px;
 cursor:pointer;
 }
 
-/* FORM */
-.booking-form input {
-width:100%;
-padding:10px;
-margin:8px 0;
-border:1px solid #ccc;
-border-radius:8px;
+/* ---------- TOAST ---------- */
+.toast {
+position:fixed;
+bottom:30px;
+right:30px;
+background:#111;
+color:white;
+padding:14px 20px;
+border-radius:10px;
+opacity:0;
+transform:translateY(20px);
+transition:0.3s;
 }
 
-/* ANIMATION */
+.toast.show {
+opacity:1;
+transform:translateY(0);
+}
+
+/* ---------- ANIMATION ---------- */
 @keyframes fadeIn {
 from {opacity:0; transform:scale(0.95);}
 to {opacity:1; transform:scale(1);}
 }
 
-/* MOBILE */
+/* ---------- MOBILE ---------- */
 @media(max-width:768px){
 .uc-hero h1 {
 font-size:28px;
+}
+
+.uc-navbar {
+padding:12px 20px;
 }
 }
